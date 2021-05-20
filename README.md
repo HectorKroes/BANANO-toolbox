@@ -20,7 +20,7 @@ Download certificate before collecting usual information as before:
 ```
 python bantb.py -c <user_id>
 ```
-If you wish more information about the program or the given information:
+If you wish more information about the program or the given information (not working yet):
 ```
 python bantb.py -h
 ```
