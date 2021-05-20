@@ -40,6 +40,14 @@ def web_requests(username):
 
 	return page1, page2, page3, page4, error_status
 
+def basic_data(username):
+	try:
+		page3 = requests.get(f"https://api.foldingathome.org/user/{username}")
+	except:
+		page3 = "Error 404" ; error_status = True
+		print(f"Failed to reach user info at https://api.foldingathome.org/user/{username}")
+	return page3
+
 def process_tp(tp, username):
 	soup = str(BeautifulSoup(tp.content, "html.parser"))
 
@@ -86,7 +94,8 @@ def process_up(up):
 def process_pp(pp):
 	soup = BeautifulSoup(pp.content, "html.parser")
 
-	price_info = str(soup.select("div.sc-16r8icm-0.kXPxnI.priceTitle___1cXUG")).split(">")
-	ban_price = float(price_info[2].split("<")[0][1:])
+	price_info = str(soup.select("div.priceValue___11gHJ")).split(">")
+
+	ban_price = float(price_info[1].split("<")[0][1:])
 
 	return ban_price
