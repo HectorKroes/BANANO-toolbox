@@ -6,7 +6,7 @@ Clone the github page:
 ```
 git clone https://github.com/HectorKroes/BANANO-toolbox
 ```
-Moving to the BANANO-toolbox folder:
+And after moving to the BANANO-toolbox folder:
 ```
 pip install -r requirements.txt
 ```
